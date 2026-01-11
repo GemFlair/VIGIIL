@@ -95,7 +95,7 @@ const ProvisioningTerminal = ({ onComplete }: { onComplete: () => void }) => {
     <div className="font-mono text-[9px] md:text-[10px] text-emerald-500/80 space-y-1.5 text-left max-h-[150px] overflow-hidden">
       {logs.map((log, i) => (
         <div key={i} className="animate-in slide-in-from-left-2 duration-300">
-          <span className="text-emerald-900 mr-2">>></span> {log}
+          <span className="text-emerald-900 mr-2">{'>'}{'>'}</span> {log}
         </div>
       ))}
       {step < sequences.length && (

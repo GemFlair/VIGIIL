@@ -1,8 +1,8 @@
 {
   "name": "vigil",
   "private": true,
-  "version": "0.0.0",
-  "type": "module", 
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,15 +12,25 @@
     "postinstall": "npm run build"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "express": "^4.19.2",
     "@google-cloud/vertexai": "^1.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-    // ... keep your other existing dependencies ...
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.344.0",
+    "@solana/web3.js": "^1.91.0",
+    "framer-motion": "^11.0.0",
+    "@google/genai": "*"
   },
   "devDependencies": {
-    "typescript": "^5.0.2",
-    "vite": "^4.3.9"
-    // ... keep your other existing devDependencies ...
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
   }
 }

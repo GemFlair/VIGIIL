@@ -178,7 +178,7 @@ export const MeshQueryTerminal: React.FC<MeshQueryTerminalProps> = ({ onUsageUpd
           <div className="h-10 bg-zinc-950 border-b border-zinc-900 flex items-center px-8 justify-between shrink-0">
              <div className="flex items-center gap-3">
                 <Terminal size={12} className="text-zinc-600" />
-                <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">SENTINEL@VIGIL:~ >> QUERY_MODE</span>
+                <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">SENTINEL@VIGIL:~ {'>'}{'>'} QUERY_MODE</span>
              </div>
              <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">

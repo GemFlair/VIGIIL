@@ -222,7 +222,7 @@ export const FlagshipHeaderArchitect: React.FC = () => {
                        <span className="text-[8px] font-black text-zinc-700 uppercase tracking-widest">Forge Status</span>
                     </div>
                     <div className="flex gap-2">
-                       <span className="text-[10px] font-mono text-zinc-500 font-bold">>_</span>
+                       <span className="text-[10px] font-mono text-zinc-500 font-bold">{'>'}_</span>
                        <p className="text-[10px] font-mono text-zinc-600 leading-relaxed uppercase tracking-tighter italic">
                           {state === 'FORGING' ? progressMsg : 'KERNEL_READY_FOR_DIRECTIVE'}
                        </p>

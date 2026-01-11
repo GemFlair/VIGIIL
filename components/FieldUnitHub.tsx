@@ -313,7 +313,7 @@ export const FieldUnitHub: React.FC = () => {
                <div className="flex-1 overflow-y-auto no-scrollbar space-y-3">
                   {activeThreat ? (
                     <div className="animate-in slide-in-from-left-2 duration-300 space-y-2">
-                       <p className="text-[10px] font-mono text-emerald-500 uppercase tracking-tight">>> BUFFER_CAPTURED_IDENT</p>
+                       <p className="text-[10px] font-mono text-emerald-500 uppercase tracking-tight">{'>'}{'>'} BUFFER_CAPTURED_IDENT</p>
                        <p className="text-[10px] font-mono text-zinc-600 leading-relaxed uppercase italic">Scanning for structural collision with history clusters...</p>
                     </div>
                   ) : (
