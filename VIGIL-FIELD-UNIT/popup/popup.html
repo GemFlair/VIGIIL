@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>VIGIL | Field Unit Dashboard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="vigil-pod">
+    <!-- AUTH SCREEN -->
+    <div id="auth-screen" class="screen active">
+      <div class="pod-locked-visual">
+        <div class="lock-ring"></div>
+        <div class="v-mark">V</div>
+      </div>
+      <div class="auth-content">
+        <h1 class="italic">LINK_REQUIRED.</h1>
+        <p>CONNECT TO COMMAND CENTER TO SYNC TIER.</p>
+        <button id="handshake-btn">INITIALIZE HANDSHAKE</button>
+        <a href="https://48evb9yill5ja8sxgiy9hgzjcx1ocbouxx6c7nfxhgkt5ai2e3-h852644758.scf.usercontent.goog/index.html" target="_blank" class="footer-link">VISIT COMMAND CENTER</a>
+      </div>
+    </div>
+
+    <!-- DASHBOARD SCREEN -->
+    <div id="dashboard-screen" class="screen">
+      <header>
+        <div class="brand">
+          <div class="logo">V</div>
+          <span>SENTINEL_DASHBOARD</span>
+        </div>
+        <div class="header-right">
+          <div class="status-pill">
+            <div class="dot animate-pulse"></div>
+            <span id="tier-label">BASELINE</span>
+          </div>
+          <button id="terminate-btn" title="TERMINATE SESSION">
+            <span class="btn-label">REVOKE</span>
+            <span class="btn-icon">⏻</span>
+          </button>
+        </div>
+      </header>
+      
+      <main>
+        <!-- IDENTITY POD -->
+        <div class="identity-pod">
+          <div class="wallet-info">
+            <span class="lbl">LINKED_WALLET</span>
+            <span id="wallet-addr" class="mono">UNLINKED</span>
+          </div>
+          <div class="relay-info">
+            <span class="lbl">SECURE_RELAY</span>
+            <span id="relay-status">STABLE</span>
+          </div>
+        </div>
+
+        <!-- BIOMETRIC GAUGE -->
+        <div class="bri-pod">
+           <div class="gauge-container">
+             <svg viewBox="0 0 100 100">
+               <circle class="bg" cx="50" cy="50" r="45"></circle>
+               <circle class="fill" id="gauge-fill" cx="50" cy="50" r="45"></circle>
+             </svg>
+             <div class="val" id="bri-val">100%</div>
+           </div>
+           <div class="pod-info">
+             <div class="label">Biological Resilience</div>
+             <div class="rank" id="rank-label">RECRUIT_RANK</div>
+           </div>
+        </div>
+
+        <!-- INTERCEPTION MATRIX -->
+        <div class="matrix-section">
+          <div class="section-label">>> INTERCEPTION_MATRIX</div>
+          <div class="stats-grid">
+            <div class="stat-pod" data-risk="safe" id="pod-trusted">
+              <span class="val" id="stat-trusted">0</span>
+              <span class="lbl">TRUSTED_NODES</span>
+            </div>
+            <div class="stat-pod" data-risk="threat" id="pod-poison">
+              <span class="val" id="stat-poison">0</span>
+              <span class="lbl">POISONS_BLOCKED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- APEX / PRO GRID -->
+        <div id="apex-grid" class="matrix-section">
+          <div class="section-label">>> HEURISTIC_TELEMETRY</div>
+          <div class="stats-grid">
+            <div class="stat-pod" id="pod-mesh">
+              <span class="val" id="stat-mesh">0</span>
+              <span class="lbl">MESH_SYNC_COUNT</span>
+            </div>
+            <div class="stat-pod" id="pod-vci">
+              <span class="val" id="stat-vci">0</span>
+              <span class="lbl">VCI_PREDICTIONS</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="intercept-log">
+          <div class="log-header">
+            <span class="mono">>> TELEMETRY_STREAM</span>
+            <span class="status">LISTENING</span>
+          </div>
+          <div id="log-feed" class="mono">
+            <div class="empty">Relay active. Monitoring DOM...</div>
+          </div>
+        </div>
+      </main>
+      
+      <footer>
+         <span id="version-tag">v0.0.6.0 // SOVEREIGN_RELAY</span>
+      </footer>
+    </div>
+
+    <!-- FORENSIC OVERLAY -->
+    <div id="forensic-overlay" class="overlay">
+      <div class="overlay-content">
+        <div class="overlay-header">
+          <h3 id="drill-title">>> POISON_FORENSICS</h3>
+          <button id="close-drill">CLOSE [X]</button>
+        </div>
+        <div id="drill-grid" class="drill-grid">
+          <!-- Dynamically Injected -->
+        </div>
+        <div class="overlay-footer">
+          <p>DATA DERIVED FROM LOCAL HEURISTIC MATRIX</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

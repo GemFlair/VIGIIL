@@ -1,0 +1,58 @@
+@keyframes shine {
+  from { left: -100%; }
+  to { left: 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes flash-red {
+  0%, 100% { border-color: rgba(239, 68, 68, 0.2); }
+  50% { border-color: rgba(239, 68, 68, 0.5); }
+}
+
+/* SYNC COLOR ENGINE */
+@keyframes sync-color-text {
+  0%, 100% { color: #3b82f6; }
+  25% { color: #06b6d4; }
+  50% { color: #a855f7; }
+  75% { color: #10b981; }
+}
+
+@keyframes sync-color-bg {
+  0%, 100% { background-color: #3b82f6; }
+  25% { background-color: #06b6d4; }
+  50% { background-color: #a855f7; }
+  75% { background-color: #10b981; }
+}
+
+@keyframes sync-color-border {
+  0%, 100% { border-color: rgba(59, 130, 246, 0.4); }
+  25% { border-color: rgba(6, 182, 212, 0.4); }
+  50% { border-color: rgba(168, 85, 247, 0.4); }
+  75% { border-color: rgba(16, 185, 129, 0.4); }
+}
+
+@keyframes status-sync-border {
+  0%, 100% { border-color: rgba(59, 130, 246, 0.1); box-shadow: 0 0 0px rgba(59, 130, 246, 0); }
+  50% { border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 0 40px rgba(59, 130, 246, 0.05); }
+}
+
+@keyframes grid-drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(64px, 64px); }
+}
+
+.animate-sync-color-text { animation: sync-color-text 8s infinite linear; }
+.animate-sync-color-bg { animation: sync-color-bg 8s infinite linear; }
+.animate-sync-color-border { animation: sync-color-border 8s infinite linear; }
+.animate-status-sync-border { animation: status-sync-border 4s infinite ease-in-out; }
+.animate-grid-drift { animation: grid-drift 20s linear infinite; }
+.animate-flash-red { animation: flash-red 2s infinite ease-in-out; }
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #050505; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 2px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #52525b; }

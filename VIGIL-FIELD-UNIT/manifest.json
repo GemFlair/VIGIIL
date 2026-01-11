@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "VIGIL | Field Unit",
+  "version": "0.0.5.1",
+  "description": "Layer 0.5 Security Standard. Modular HUD Architecture v2.",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.scf.usercontent.goog/*"
+    ]
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background/serviceWorker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/retinalShield.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "core/*.js", 
+        "popup/*.css", 
+        "content/ui/*.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
