@@ -170,7 +170,7 @@ export const DefinitiveNonGoals: React.FC = () => {
                        <div className="space-y-3 font-mono text-[10px] text-zinc-600 h-40 overflow-hidden">
                           {logs.map((log, i) => (
                             <div key={i} className="animate-in slide-in-from-left-2 duration-300">
-                               <span className="text-zinc-800">>></span> {log}
+                               <span className="text-zinc-800">{`>>`}</span> {log}
                             </div>
                           ))}
                           {logs.length === 0 && <p className="animate-pulse">Awaiting Neutralization sequence...</p>}
