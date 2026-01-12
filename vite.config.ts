@@ -8,18 +8,28 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
+  base: '/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // The magic fix: polyfill process.env so the browser doesn't crash
+  // CRITICAL FIX: We define the entire 'process' object to stop the crash.
   define: {
-    'process.env': {},
-    'process.platform': JSON.stringify('browser'),
-    'process.version': JSON.stringify('v16.0.0')
+    'process': JSON.stringify({
+      env: {
+        NODE_ENV: 'production',
+        // Add any other env vars your libs might expect here
+      },
+      browser: true,
+      version: 'v16.0.0',
+      platform: 'browser'
+    }),
+    // Fix "global is not defined" errors common in Web3/Crypto libs
+    'global': 'window',
   },
   build: {
+    outDir: 'dist',
     chunkSizeWarningLimit: 1600,
   }
 });
