@@ -26,11 +26,11 @@
     .mono { font-family: 'JetBrains Mono', monospace; }
   </style>
 
-  <!-- CRITICAL FIX: Polyfills for Process AND Buffer -->
+  <!-- CRITICAL RUNTIME FIX: Polyfills for Process AND Buffer -->
   <script>
     window.global = window;
     
-    // Fix Process
+    // This makes 'process' available to libraries that look for it globally
     window.process = {
       env: { NODE_ENV: 'production' },
       version: '',
@@ -38,7 +38,7 @@
       nextTick: function(cb) { setTimeout(cb, 0); }
     };
     
-    // Fix Buffer (Minimal polyfill to prevent crash)
+    // Buffer Polyfill
     window.Buffer = window.Buffer || {
       isBuffer: () => false,
       from: (data) => data,
@@ -47,7 +47,6 @@
 </head>
 <body>
   <div id="root"></div>
-  <!-- CORRECT PATH from your check -->
   <script type="module" src="/src/index.tsx"></script>
 </body>
 </html>

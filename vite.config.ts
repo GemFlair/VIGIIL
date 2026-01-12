@@ -14,10 +14,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // SAFE CONFIG: We only polyfill specific properties to avoid breaking the build
   define: {
-    // CRITICAL FIX: This tells Vite "Every time you see 'process', write 'window.process' instead"
-    // This connects the code to the polyfill we put in index.html
-    'process': 'window.process',
+    'process.env.NODE_ENV': JSON.stringify('production'),
+    'process.version': JSON.stringify(''),
     'global': 'window',
   },
   build: {
