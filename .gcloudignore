@@ -1,8 +1,5 @@
-# Ignore artifacts created by the build process
-/dist
-/node_modules
-
-# Ignore configuration files not needed in the final deployment
-/package-lock.json
-/tsconfig.json
-/vite.config.ts
+.git
+.gitignore
+node_modules
+Dockerfile
+README.md

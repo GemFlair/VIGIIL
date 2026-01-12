@@ -18,9 +18,12 @@ if (!fs.existsSync(distPath)) {
   console.error('ERROR: "dist" folder not found. Ensure "npm run build" runs before starting.');
 }
 
+// Serve static files (css, js, images)
 app.use(express.static(distPath, { maxAge: '1y', etag: false }));
 
-app.get('*', (req, res) => {
+// CRITICAL FIX: Changed '*' to /.*/ for Express 5 compatibility
+// This handles the SPA routing (sending all other requests to index.html)
+app.get(/.*/, (req, res) => {
   const indexPath = path.join(distPath, 'index.html');
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
