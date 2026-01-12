@@ -14,18 +14,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // CRITICAL FIX: We define the entire 'process' object to stop the crash.
   define: {
-    'process': JSON.stringify({
-      env: {
-        NODE_ENV: 'production',
-        // Add any other env vars your libs might expect here
-      },
-      browser: true,
-      version: 'v16.0.0',
-      platform: 'browser'
-    }),
-    // Fix "global is not defined" errors common in Web3/Crypto libs
+    // CRITICAL FIX: This tells Vite "Every time you see 'process', write 'window.process' instead"
+    // This connects the code to the polyfill we put in index.html
+    'process': 'window.process',
     'global': 'window',
   },
   build: {
